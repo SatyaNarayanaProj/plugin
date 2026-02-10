@@ -5,7 +5,9 @@ import os
 
 # ---------------- CONFIG ---------------- #
 
-OPENROUTER_API_KEY = "OPENROUTER_API_KEY"
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+
 
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
@@ -195,5 +197,6 @@ If the question contains multiple concepts, split them into separate bullets.
 
     response.raise_for_status()
     return response.json()["choices"][0]["message"]["content"].strip()
+
 
 
