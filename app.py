@@ -14,7 +14,8 @@ app.add_middleware(
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "https://hrms-420.netlify.app",
-        "http://127.0.0.1:63601"
+        "http://127.0.0.1:63601",
+        "http://192.168.0.21:5173"
     ],
     allow_credentials=False,
     allow_methods=["*"],
@@ -63,3 +64,4 @@ def chat_options():
 def chat(req: ChatRequest):
     reply = chat_reply([m.dict() for m in req.messages])
     return {"reply": reply}
+
